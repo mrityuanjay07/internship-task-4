@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset & Base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Roboto', sans-serif; line-height: 1.6; background: #f5f5f5; color: #333; }
+    a { text-decoration: none; color: inherit; }
+
+    /* Navbar */
+    nav {
+      position: fixed; width: 100%; background: #222; color: #fff;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 2rem; z-index: 1000;
+    }
+    nav .logo { font-weight: 700; font-size: 1.5rem; }
+    nav ul { display: flex; list-style: none; }
+    nav ul li { margin-left: 2rem; cursor: pointer; transition: color 0.3s; }
+    nav ul li:hover { color: #ff4d4d; }
+
+    /* Sections */
+    section { min-height: 100vh; padding: 6rem 2rem 2rem; display: flex; justify-content: center; align-items: center; flex-direction: column; }
+    h1, h2 { margin-bottom: 1rem; }
+    p { max-width: 600px; text-align: center; }
+
+    /* About */
+    #about { background: linear-gradient(135deg, #ff9a9e, #fad0c4); }
+    #about .card { background: #fff; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); transition: transform 0.5s; }
+    #about .card:hover { transform: scale(1.05); }
+
+    /* Projects */
+    #projects { background: linear-gradient(135deg, #a18cd1, #fbc2eb); }
+    .projects-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; width: 100%; max-width: 1200px; }
+    .project { background: #fff; padding: 1.5rem; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); transition: transform 0.3s; }
+    .project:hover { transform: scale(1.05); }
+
+    /* Contact */
+    #contact { background: linear-gradient(135deg, #43cea2, #185a9d); color: #fff; }
+    #contact form { display: flex; flex-direction: column; gap: 1rem; max-width: 400px; width: 100%; }
+    #contact input, #contact textarea { padding: 0.8rem; border-radius: 10px; border: none; outline: none; }
+    #contact button { padding: 1rem; border: none; border-radius: 10px; background: #ff4d4d; color: #fff; cursor: pointer; transition: transform 0.3s; }
+    #contact button:hover { transform: scale(1.05); }
+
+    /* Footer */
+    footer { text-align: center; padding: 2rem; background: #222; color: #fff; }
+
+    /* Navbar mobile */
+    @media(max-width:768px){
+      nav ul { display: none; flex-direction: column; background: #222; position: absolute; top: 60px; right: 0; width: 200px; padding: 1rem; }
+      nav ul.show { display: flex; }
+      nav ul li { margin: 1rem 0; }
+      #menu-toggle { display: block; cursor: pointer; }
+    }
+    #menu-toggle { display: none; color: #fff; font-size: 1.5rem; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">MyPortfolio</div>
+    <ul id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div id="menu-toggle">☰</div>
+  </nav>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="card">
+      <h1>About Me</h1>
+      <p>Hello! I am a web developer passionate about creating responsive, modern, and interactive websites with clean design and animations.</p>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-container">
+      <div class="project">
+        <h3>Project One</h3>
+        <p>A responsive website with smooth animations and clean UI design.</p>
+      </div>
+      <div class="project">
+        <h3>Project Two</h3>
+        <p>Interactive web application built with HTML, CSS, and JS.</p>
+      </div>
+      <div class="project">
+        <h3>Project Three</h3>
+        <p>Modern portfolio website with colorful design and 3D hover effects.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>&copy; 2025 MyPortfolio. All rights reserved.</footer>
+
+  <!-- JS -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', () => navLinks.classList.toggle('show'));
+  </script>
+
+</body>
+</html>
