@@ -13,11 +13,11 @@
 
     /* Navbar */
     nav {
-      position: fixed; width: 100%; background: #222; color: #fff;
+      position: fixed; width: 90%; background: #222; color: #fff;
       display: flex; justify-content: space-between; align-items: center;
       padding: 1rem 2rem; z-index: 1000;
     }
-    nav .logo { font-weight: 700; font-size: 1.5rem; }
+    nav .logo { font-weight: 690; font-size: 1.5rem; }
     nav ul { display: flex; list-style: none; }
     nav ul li { margin-left: 2rem; cursor: pointer; transition: color 0.3s; }
     nav ul li:hover { color: #ff4d4d; }
